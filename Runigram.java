@@ -93,7 +93,7 @@ public class Runigram {
 		for(int i = 0; i< image.length; i++){
 			for(int j = 0; j<image[i].length;j++){
 
-				newarr[i][image.length-1-j] = image[j][i];
+				newarr[i][image[i].length-1-j] = image[j][i];
 			}
 		}
 		return newarr;
