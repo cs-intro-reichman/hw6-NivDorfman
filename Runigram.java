@@ -70,6 +70,9 @@ public class Runigram {
 	// For example, to check that some image processing function works correctly,
 	// we can apply the function and then use this function to print the resulting image.
 	private static void print(Color[][] image) {
+		if (image == null) {
+			return;
+		}
 		
 		for(int i = 0; i < image.length; i++)
 		{
@@ -91,6 +94,7 @@ public class Runigram {
 			for(int j = 0; j<image[i].length;j++){
 
 				newarr[image.length-1-i][j] = image[i][j];
+				newarr[i][image.length-1-j] = image[j][i];
 			}
 		}
 		return newarr;
