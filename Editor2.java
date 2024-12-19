@@ -10,17 +10,21 @@ import java.awt.Color;
 public class Editor2 {
 
 	public static void main (String[] args){
-				String fileName = args[0];
-		int w = Integer.parseInt(args[1]);
-		int h = Integer.parseInt(args[2]);
-		// Reads the input image and creates an empty output image
+		String fileName = args[0];
+
 		Color[][] imageIn = Runigram.read(fileName);	
-		Color[][] imageOut = Runigram.scaled(imageIn, w, h);
+		Color[][] grayed = Runigram.grayScaled(imageIn);
+		Color[][] imageOut = Runigram.blend(imageIn, grayed, 0.5);	
 
 		Runigram.setCanvas(imageIn);
 		Runigram.display(imageIn);
-		StdDraw.pause(2000);
+		StdDraw.pause(1000); 
+		 
 		Runigram.setCanvas(imageOut);
-		Runigram.display(imageOut);		
+		Runigram.display(imageOut);	
+		StdDraw.pause(1000);
+		
+		Runigram.setCanvas(grayed);
+		Runigram.display(grayed);	
 	}
 }
