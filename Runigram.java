@@ -141,21 +141,14 @@ public class Runigram {
 	 * The image is scaled (resized) to have the given width and height.
 	 */
 	public static Color[][] scaled(Color[][] image, int width, int height) {
-	int originalWidth = image[0].length;
-        int originalHeight = image.length;
 
-        Color[][] scaledImage = new Color[height][width];
-
-        for (int i = 0; i < height; i++) {
-            for (int j = 0; j < width; j++) {
-                int sourceI = (int) Math.floor( i *( originalHeight / height));
-                int sourceJ = (int) Math.floor( j * (originalWidth / width));
-
-                scaledImage[i][j] = image[sourceI][sourceJ];
-            }
-        }
-
-        return scaledImage;
+		Color[][] scaled = new Color[height][width];
+		for (int i = 0; i < height; i++){
+			for (int j = 0; j < width; j++){
+				scaled[i][j] = image[(int)(i * image.length / height)][(int)(j * image[0].length / width)];
+			}
+		}
+		return scaled;
 	}
 	
 	/**
@@ -224,7 +217,7 @@ public class Runigram {
 	public static void display(Color[][] image) {
 		int height = image.length;
 		int width = image[0].length;
-		
+
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				// Sets the pen color to the pixel color
