@@ -198,7 +198,14 @@ public class Runigram {
 	 * of the source image.
 	 */
 	public static void morph(Color[][] source, Color[][] target, int n) {
-		//// Replace this comment with your code
+		target = scaled(target, source[0].length, source.length);
+		Color[][] retCol;
+		setCanvas(source);
+		for (int j = 0; j <= n; j++) {
+			retCol = blend(source, target, ((double)(n - j) / n));
+			display(retCol);
+			StdDraw.pause((int)(1000.0/n));
+		}	
 	}
 	
 	/** Creates a canvas for the given image. */
