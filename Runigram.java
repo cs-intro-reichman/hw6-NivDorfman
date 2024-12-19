@@ -82,7 +82,6 @@ public class Runigram {
 			}
 			System.out.println();
 		}	
-			//// Notice that all you have to so is print every element (i,j) of the array using the print(Color) function.
 	}
 	
 	/**
@@ -188,7 +187,7 @@ public class Runigram {
 				newCol[i][j] = blend(image1[i][j], image2[i][j], alpha);
 			}
 		}
-		return newImage;
+		return newCol;
 	}
 
 	/**
