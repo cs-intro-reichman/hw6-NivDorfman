@@ -9,6 +9,8 @@ public class Runigram {
 		
 		// Tests the reading and printing of an image:	
 		Color[][] tinypic = read("tinypic.ppm");
+		Color[][] thor = read("thor.ppm");
+		Color[][] xmen = read("xmen.ppm");
 		print(tinypic);
 
 		// Creates an image which will be the result of various 
@@ -20,6 +22,7 @@ public class Runigram {
 		System.out.println();
 		print(image);
 		
+		morph(thor, xmen, 10);
 		//// Write here whatever code you need in order to test your work.
 		//// You can continue using the image array.
 	}
@@ -196,7 +199,6 @@ public class Runigram {
 		for (int j = 0; j <= n; j++) {
 			retCol = blend(source, target, ((double)(n - j) / n));
 			display(retCol);
-			StdDraw.pause((int)(1000.0/n));
 		}	
 	}
 	
