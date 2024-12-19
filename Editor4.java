@@ -7,5 +7,6 @@ public class Editor4 {
 		Color[][] tarImg = Runigram.grayScaled(sImgage);	
 		Runigram.setCanvas(sImgage);
 		Runigram.morph(sImgage, tarImg, num);
+		
 	}
 }
