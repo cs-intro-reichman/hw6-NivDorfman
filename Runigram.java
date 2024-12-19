@@ -224,6 +224,7 @@ public class Runigram {
 	public static void display(Color[][] image) {
 		int height = image.length;
 		int width = image[0].length;
+		
 		for (int i = 0; i < height; i++) {
 			for (int j = 0; j < width; j++) {
 				// Sets the pen color to the pixel color
